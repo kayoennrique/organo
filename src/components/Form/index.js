@@ -29,8 +29,7 @@ const Form = (props) => {
             imagem,
             time
         })
-    }
-
+}       
     return (
         <section className="form">
             <form onSubmit={saving}>
