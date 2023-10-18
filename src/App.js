@@ -47,7 +47,6 @@ function App() {
   const [colaboradores, setColaboradores] = useState([])
 
   const toNewContributorAdded = (colaborador) => {
-    console.log(colaborador)
     setColaboradores([...colaboradores, colaborador])
   }
 
@@ -56,12 +55,12 @@ function App() {
       <Banner />
       <Form times={times.map(time => time.nome)} toRegisteredCollaborator={colaborador => toNewContributorAdded(colaborador)} />
       {times.map(time => <Time
-       key={time.nome}
-       nome={time.nome} 
-       primaryColor={time.primaryColor} 
-       secondColor={time.secondColor}
-       colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}       
-       />)}
+        key={time.nome}
+        nome={time.nome}
+        primaryColor={time.primaryColor}
+        secondColor={time.secondColor}
+        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+      />)}
       <Footer />
     </div>
   );
