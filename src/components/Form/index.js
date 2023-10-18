@@ -29,34 +29,39 @@ const Form = (props) => {
             imagem,
             time
         })
-}       
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
+    }
+
     return (
         <section className="form">
             <form onSubmit={saving}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
-                <TextField 
+                <TextField
                     mandatory={true}
                     label="Nome"
-                    placeholder="Digite seu nome" 
+                    placeholder="Digite seu nome"
                     worth={nome}
                     changed={worth => setNome(worth)}
                 />
                 <TextField
                     mandatory={true}
                     label="Cargo"
-                    placeholder="Digite seu cargo" 
+                    placeholder="Digite seu cargo"
                     worth={cargo}
                     changed={worth => setCargo(worth)}
                 />
                 <TextField
                     label="Imagem"
-                    placeholder="Digite o endereço da imagem" 
+                    placeholder="Digite o endereço da imagem"
                     worth={imagem}
                     changed={worth => setImagem(worth)}
                 />
                 <Dropdown
                     mandatory={true}
-                    label="Time" 
+                    label="Time"
                     itens={times}
                     worth={time}
                     changed={worth => setTime(worth)}

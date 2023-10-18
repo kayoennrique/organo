@@ -2,10 +2,16 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Form from './components/Form';
 import Time from './components/Time';
+import Footer from './components/Footer'
 
 function App() {
 
   const times = [
+    {
+      nome: 'Programação',
+      primaryColor: '#57C278',
+      secondColor: '#D9F7E9'
+    },
     {
       nome: 'Front-End',
       primaryColor: '#82CFFA',
@@ -49,9 +55,16 @@ function App() {
     <div className="App">
       <Banner />
       <Form times={times.map(time => time.nome)} toRegisteredCollaborator={colaborador => toNewContributorAdded(colaborador)} />
-      {times.map(time => <Time key={time.nome} nome={time.nome} primaryColor={time.primaryColor} secondColor={time.secondColor}/>)}
+      {times.map(time => <Time
+       key={time.nome}
+       nome={time.nome} 
+       primaryColor={time.primaryColor} 
+       secondColor={time.secondColor}
+       colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}       
+       />)}
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default App
