@@ -4,45 +4,38 @@ import Footer from "./components/Footer";
 import Time from "./components/Time";
 import Form from "./components/Form";
 
-function App() {
+  function App() {
 
-  const times = [
-    {
-      nome: 'Programação',
-      primaryColor: '#D9F7E9',
-      secondColor: '#57C278'
-    },
-    {
-      nome: 'Front-End',
-      primaryColor: '#E8F8FF',
-      secondColor: '#82CFFA'
-    },
-    {
-      nome: 'Data Science',
-      primaryColor: '#F0F8E2',
-      secondColor: '#A6D157'
-    },
-    {
-      nome: 'Devops',
-      primaryColor: '#FDE7E8',
-      secondColor: '#E06B69'
-    },
-    {
-      nome: 'UX e Design',
-      primaryColor: '#FAE9F5',
-      secondColor: '#DB6EBF'
-    },
-    {
-      nome: 'Mobile',
-      primaryColor: '#FFF5D9',
-      secondColor: '#FFBA05'
-    },
-    {
-      nome: 'Inovação e Gestão',
-      primaryColor: '#FFEEDF',
-      secondColor: '#FF8A29'
-    },
-  ]
+    const [times, setTimes] = useState([
+      {
+        nome: 'Programação',
+        color: '#57C278'
+      },
+      {
+        nome: 'Front-End',
+        color: '#82CFFA'
+      },
+      {
+        nome: 'Data Science',
+        color: '#A6D157'
+      },
+      {
+        nome: 'Devops',
+        color: '#E06B69'
+      },
+      {
+        nome: 'UX e Design',
+        color: '#DB6EBF'
+      },
+      {
+        nome: 'Mobile',
+        color: '#FFBA05'
+      },
+      {
+        nome: 'Inovação e Gestão',
+        color: '#FF8A29'
+      },
+    ]);
 
   const inicial = [
     {
@@ -198,6 +191,15 @@ function App() {
 
   }
 
+  function changeColorOfTime(color, nome) {
+    setTimes(times.map(time => {
+      if(time.nome === nome) {
+        time.color = color;
+      }
+      return time;
+    }));
+  }
+
   return (
     <div>
       <Banner />
@@ -208,6 +210,7 @@ function App() {
         <h1>Minha organização</h1>
         {times.map((time, indice) => 
           <Time
+          changeColor={changeColorOfTime}
           key={indice} 
           time={time} 
           colaboradores={colaboradores.filter
