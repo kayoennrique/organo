@@ -1,21 +1,10 @@
-import './TextField.css'
+import './text-field.css'
 
-const TextField = (props) => {
-
-    const placeholderModified = `${props.placeholder}...` 
-
-    const typed = (event) => {
-        props.changed(event.target.value)
-    }
-
-    return (
-        <div className="text-field">
-            <label>
-                {props.label}
-            </label>
-            <input value={props.worth} onChange={typed} required={props.mandatory} placeholder={placeholderModified}/>
-        </div>
-    )
+const TextField = ({label, placeholder, worth, toChanged, mandatory = false}) => {
+    return (<div className='text-field'>
+        <label>{label}</label>
+        <input value={worth} onChange={event => toChanged(event.target.value)} required={mandatory} placeholder={placeholder}/> 
+    </div>)
 }
 
 export default TextField
