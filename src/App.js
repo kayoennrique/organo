@@ -11,37 +11,37 @@ import { v4 as uuidv4 } from 'uuid';
       {
         id: uuidv4(),
         nome: 'Programação',
-        color: '#57C278'
+        cor: '#57C278'
       },
       {
         id: uuidv4(),
         nome: 'Front-End',
-        color: '#82CFFA'
+        cor: '#82CFFA'
       },
       {
         id: uuidv4(),
         nome: 'Data Science',
-        color: '#A6D157'
+        cor: '#A6D157'
       },
       {
         id: uuidv4(),
         nome: 'Devops',
-        color: '#E06B69'
+        cor: '#E06B69'
       },
       {
         id: uuidv4(),
         nome: 'UX e Design',
-        color: '#DB6EBF'
+        cor: '#DB6EBF'
       },
       {
         id: uuidv4(),
         nome: 'Mobile',
-        color: '#FFBA05'
+        cor: '#FFBA05'
       },
       {
         id: uuidv4(),
         nome: 'Inovação e Gestão',
-        color: '#FF8A29'
+        cor: '#FF8A29'
       },
     ]);
   const inicial = [
@@ -221,10 +221,10 @@ import { v4 as uuidv4 } from 'uuid';
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
   }
 
-  function changeColorOfTime(color, id) {
+  function changeColorOfTime(cor, id) {
     setTimes(times.map(time => {
       if(time.id === id) {
-        time.color = color;
+        time.cor = cor;
       }
       return time;
     }));
