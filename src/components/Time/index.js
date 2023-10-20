@@ -7,7 +7,7 @@ const Time = ({ time, colaboradores, whenDelete, changeColor }) => {
 
         colaboradores.length > 0 && <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(time.color, '0.6') }}>
             <input type='color' className='input-color' value={time.color} onChange={evento => {
-                changeColor(evento.target.value, time.nome);
+                changeColor(evento.target.value, time.id);
             }} />
             <h3 style={{ borderColor: time.color }}>{time.nome}</h3>
             <div className='colaboradores'>
