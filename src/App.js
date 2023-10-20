@@ -44,7 +44,6 @@ import { v4 as uuidv4 } from 'uuid';
         color: '#FF8A29'
       },
     ]);
-
   const inicial = [
     {
       id: uuidv4(),
@@ -220,7 +219,6 @@ import { v4 as uuidv4 } from 'uuid';
 
   function deleteColaborador(id){
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
-
   }
 
   function changeColorOfTime(color, id) {
