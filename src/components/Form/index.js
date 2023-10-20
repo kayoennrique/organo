@@ -4,12 +4,14 @@ import TextField from '../TextField'
 import Button from '../Button'
 import './form.css'
 
-const Form = ({toRegistered, times}) => {
+const Form = ({toRegistered, times, aoCriarTime}) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
+    const [nomeTime, setNomeTime] = useState('')
+    const [corTime, setCorTime] = useState('')
 
     const toSubmit = (event) => {
         event.preventDefault()
@@ -49,6 +51,25 @@ const Form = ({toRegistered, times}) => {
                     worth={time}
                     toChanged={worth => setTime(worth)}/>
                 <Button text='Criar Card' />
+            </form>
+            <form className="form" onSubmit={(evento) => {
+                evento.preventDefault()
+                aoCriarTime({ nome: nomeTime, cor: corTime })
+            }}>
+                <h2>Preencha os dados para criar um novo time.</h2>
+                <TextField
+                    mandatory={true}
+                    label='Nome'
+                    placeholder='Digite o nome do time'
+                    worth={nomeTime}
+                    toChanged={worth => setNomeTime(worth)}/>
+                <TextField
+                    mandatory={true}
+                    label='Cargo' 
+                    placeholder='Digite sua cor'
+                    worth={corTime}
+                    toChanged={worth => setCorTime(worth)}/>
+                <Button text='Criar Time' />
             </form>
         </section>
     )

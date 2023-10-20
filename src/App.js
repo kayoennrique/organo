@@ -229,11 +229,16 @@ import { v4 as uuidv4 } from 'uuid';
       return time;
     }));
   }
+  
+  function cadastrarTime({ nome, cor }) {
+    setTimes([...times, { nome, cor, id: uuidv4() }])
+  }
 
   return (
     <div>
       <Banner />
       <Form 
+      aoCriarTime={cadastrarTime}
       times={times.map(time => time.nome)} 
       toRegistered={colaborador => setColaboradores([...colaboradores, colaborador])} />
       <section className="times">

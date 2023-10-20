@@ -5,7 +5,7 @@ import './time.css'
 const Time = ({ time, colaboradores, whenDelete, changeColor }) => {
     return (
 
-        colaboradores.length > 0 && <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(time.color, '0.6') }}>
+        colaboradores.length > 0 && <section className='time' style={{ backgroundImage: 'url(/images/fundo.png)', backgroundColor: hexToRgba(time.color, '0.6') }}>
             <input type='color' className='input-color' value={time.color} onChange={evento => {
                 changeColor(evento.target.value, time.id);
             }} />
