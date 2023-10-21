@@ -1,4 +1,4 @@
-import './dropdown.css'
+import './Dropdown.css'
 
 const Dropdown = ({label, items,  worth, toChanged, mandatory = false}) => {
     return (<div className="dropdown">

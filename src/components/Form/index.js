@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Dropdown from '../Dropdown'
 import TextField from '../TextField'
 import Button from '../Button'
-import './form.css'
+import './Form.css'
 
 const Form = ({toRegistered, times, aoCriarTime}) => {
 

@@ -239,10 +239,10 @@ import { v4 as uuidv4 } from 'uuid';
     },
   ]
 
-  const [colaboradores, setColaboradores] = useState(inicial)
+  const [collaborators, setCollaborators] = useState(inicial)
 
-  function deleteColaborador(id){
-    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
+  function deleteCollaborators(id){
+    setCollaborators(collaborators.filter(collaborator => collaborator.id !== id))
   }
 
   function changeColorOfTime(cor, id) {
@@ -259,9 +259,9 @@ import { v4 as uuidv4 } from 'uuid';
   }
 
   function solveFavorite(id) {
-    setColaboradores(colaboradores.map(colaborador => {
-      if(colaborador.id === id) colaborador.favorite = !colaborador.favorite;
-      return colaborador;
+    setCollaborators(collaborators.map(collaborator => {
+      if(collaborator.id === id) collaborator.favorite = !collaborator.favorite;
+      return collaborator;
     }))
   }
 
@@ -271,7 +271,7 @@ import { v4 as uuidv4 } from 'uuid';
       <Form 
       aoCriarTime={cadastrarTime}
       times={times.map(time => time.nome)} 
-      toRegistered={colaborador => setColaboradores([...colaboradores, colaborador])} />
+      toRegistered={collaborator => setCollaborators([...collaborators, collaborator])} />
       <section className="times">
         <h1>Minha organização</h1>
         {times.map((time, indice) => 
@@ -281,10 +281,10 @@ import { v4 as uuidv4 } from 'uuid';
           id={time.id}
           key={indice} 
           time={time} 
-          colaboradores={colaboradores.filter
-          (colaborador => colaborador.time 
+          collaborators={collaborators.filter
+          (collaborator => collaborator.time 
           === time.nome)} 
-          whenDelete={deleteColaborador}
+          whenDelete={deleteCollaborators}
           />
         )}
       </section>

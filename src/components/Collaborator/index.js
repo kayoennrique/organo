@@ -1,9 +1,9 @@
 import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
-import './colaborador.css'
+import './Colaborador.css'
 
-const Colaborador = ({ colaborador, corDeFundo, whenDelete, toFavorite }) => {
+const Collaborator = ({ collaborator, corDeFundo, whenDelete, toFavorite }) => {
     function favoriter() {
-        toFavorite(colaborador.id)        
+        toFavorite(collaborator.id)        
     }
      const propsfavorite = {
         size: 30,
@@ -15,16 +15,16 @@ const Colaborador = ({ colaborador, corDeFundo, whenDelete, toFavorite }) => {
         <AiFillCloseCircle 
             size={27}
             className="delete" 
-            onClick={() => whenDelete(colaborador.id)} 
+            onClick={() => whenDelete(collaborator.id)} 
             />
         <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
-            <img src={colaborador.imagem} alt={colaborador.nome} />
+            <img src={collaborator.imagem} alt={collaborator.nome} />
         </div>
         <div className="rodape">
-            <h4>{colaborador.nome}</h4>
-            <h5>{colaborador.cargo}</h5>
+            <h4>{collaborator.nome}</h4>
+            <h5>{collaborator.cargo}</h5>
             <div className='favoriter'>
-                {colaborador.favorite
+                {collaborator.favorite
                     ? <AiFillHeart {...propsfavorite} color='#ff0000'/> 
                     : <AiOutlineHeart  {...propsfavorite} />}
             </div>
@@ -32,4 +32,4 @@ const Colaborador = ({ colaborador, corDeFundo, whenDelete, toFavorite }) => {
     </div>)
 }
 
-export default Colaborador
+export default Collaborator
