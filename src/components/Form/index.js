@@ -65,6 +65,7 @@ const Form = ({toRegistered, times, aoCriarTime}) => {
                     toChanged={worth => setNomeTime(worth)}/>
                 <TextField
                     mandatory={true}
+                    type='color'
                     label='Cor' 
                     placeholder='Digite sua cor'
                     worth={corTime}

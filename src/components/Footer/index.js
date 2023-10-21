@@ -26,7 +26,7 @@ const Footer = () => {
        <img src="/images/logo.png" alt="" />
        </section>
        <section>
-        <p>
+        <p><br />
             Desenvolvido por Kayo Ennrique.
         </p>
        </section>

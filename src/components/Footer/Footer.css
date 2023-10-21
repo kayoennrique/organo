@@ -1,17 +1,26 @@
 .footer {
     background: #6278F7;
     color: #FFF;
-    padding: 80px;
+    padding: 5% 2%; 
     display: flex;
+    flex-wrap: wrap; 
     justify-content: space-between;
     align-items: center;
 }
 
 .footer ul li {
     display: inline-block;
-    margin-right: 32px;
+    margin-right: 2%; 
 }
 
 .footer ul li:last-child {
     margin-right: 0;
+}
+
+
+@media (max-width: 768px) {
+    .footer ul li {
+        margin-right: 0;
+        margin-bottom: 10px; 
+    }
 }
