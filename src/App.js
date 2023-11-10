@@ -43,7 +43,6 @@ function App() {
       secondColor: '#FFEEDF',
     }
   ]
-
   
   const [collaborators, setcollaborators] = useState([])
 

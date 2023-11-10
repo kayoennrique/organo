@@ -1,5 +1,3 @@
-![Integrating your React project with APIs]
-
 # Organo
 
 Organo is an application developed in the React course: developing with JavaScript.

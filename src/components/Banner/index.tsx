@@ -1,6 +1,5 @@
-import './Banner.css'
-
-import React from 'react'
+import React from 'react';
+import './Banner.css';
 
 interface BannerProps {
     imageAdress: string
