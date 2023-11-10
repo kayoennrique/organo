@@ -1,79 +1,67 @@
-import { useState } from 'react'
-import Dropdown from '../Dropdown'
-import TextField from '../TextField'
-import Button from '../Button'
-import './Form.css'
+import { useState } from 'react';
+import Button from '../Button';
+import TextField from '../TextField';
+import Dropdown from '../Dropdown';
+import './Form.css';
 
-const Form = ({toRegistered, times, aoCriarTime}) => {
+const Form = (props) => {
 
-    const [nome, setNome] = useState('')
-    const [cargo, setCargo] = useState('')
-    const [imagem, setImagem] = useState('')
+    const [name, setName] = useState('')
+    const [office, setOffice] = useState('')
+    const [image, setImage] = useState('')
     const [time, setTime] = useState('')
-    const [nomeTime, setNomeTime] = useState('')
-    const [corTime, setCorTime] = useState('')
 
-    const toSubmit = (event) => {
+    const saving = (event) => {
         event.preventDefault()
-        console.log('form enviado', nome, cargo, imagem, time )
-        toRegistered({
-            nome,
-            cargo,
-            imagem,
+        props.toRegisteredCollaborator({
+            name,
+            office,
+            image,
             time
         })
+        setName('')
+        setOffice('')
+        setImage('')
+        setTime('')
     }
 
     return (
-        <section className="form-container">
-            <form className="form" onSubmit={toSubmit}>
-                <h2>Preencha os dados para criar o card do colaborador.</h2>
-                <TextField
-                    mandatory={true}
-                    label='Nome'
-                    placeholder='Digite seu nome '
-                    worth={nome}
-                    toChanged={worth => setNome(worth)}/>
-                <TextField
-                    mandatory={true}
-                    label='Cargo' 
-                    placeholder='Digite seu cargo '
-                    worth={cargo}
-                    toChanged={worth => setCargo(worth)}/>
+        <section className="form">
+            <form onSubmit={saving}>
+                <h2>Preencha os dados para criar o card do colaborador</h2>
                 <TextField 
-                    label='Imagem' 
-                    placeholder='Informe o endereço da imagem '
-                    toChanged={worth => setImagem(worth)}/>
-                <Dropdown 
                     mandatory={true}
-                    label='Times'
-                    items={times} 
+                    label="Nome"
+                    placeholder="Digite seu nome" 
+                    worth={name}
+                    changed={worth => setName(worth)}
+                />
+                <TextField
+                    mandatory={true}
+                    label="Cargo"
+                    placeholder="Digite seu cargo" 
+                    worth={office}
+                    changed={worth => setOffice(worth)}
+                />
+                <TextField
+                    label="Imagem"
+                    placeholder="Digite o endereço da imagem" 
+                    worth={image}
+                    changed={worth => setImage(worth)}
+                />
+                <Dropdown
+                    mandatory={true}
+                    label="Time" 
+                    itens={props.times}
                     worth={time}
-                    toChanged={worth => setTime(worth)}/>
-                <Button text='Criar Card' />
-            </form>
-            <form className="form" onSubmit={(evento) => {
-                evento.preventDefault()
-                aoCriarTime({ nome: nomeTime, cor: corTime })
-            }}>
-                <h2>Preencha os dados para criar um novo time.</h2>
-                <TextField
-                    mandatory={true}
-                    label='Nome'
-                    placeholder='Digite o nome do time'
-                    worth={nomeTime}
-                    toChanged={worth => setNomeTime(worth)}/>
-                <TextField
-                    mandatory={true}
-                    type='color'
-                    label='Cor' 
-                    placeholder='Digite sua cor'
-                    worth={corTime}
-                    toChanged={worth => setCorTime(worth)}/>
-                <Button text='Criar Time' />
+                    changed={worth => setTime(worth)}
+                />
+                <Button>
+                    Criar Card
+                </Button>
             </form>
         </section>
     )
 }
 
-export default Form
+export default Form;

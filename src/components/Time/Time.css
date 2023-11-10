@@ -1,26 +1,19 @@
-.time {
+.time { 
     text-align: center;
     padding: 32px;
-    background-blend-mode: multiply;
-    position: relative;
+    background-color: #D9F7E9;
 }
 
 .time h3 {
     font-size: 32px;
-    font-family: 'Prata';
-    border-bottom: 4px solid;
+    border-bottom: 4px solid #57C278;
     display: inline-block;
     padding-bottom: 8px;
 }
 
-.time .colaboradores {
+.time .collaborators {
     display: flex;
     justify-content: space-around;
     margin-top: 32px;
     flex-wrap: wrap;
-}
-.input-color {
-    position: absolute;
-    top: 20px;
-    right: 50px;
 }

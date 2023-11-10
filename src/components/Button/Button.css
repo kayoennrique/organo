@@ -1,13 +1,13 @@
 .button {
-    background: #6278F7;
+    background-color: #6278f7;
     border-radius: 10px;
     font-weight: 700;
     font-size: 18px;
     padding: 32px;
-    color: #FFF;
-    cursor: pointer;
-    font-weight: bold;
     border: none;
+    cursor: pointer;
+    color: #FFF;
+    margin: 32px 0;
 }
 
 .button:hover {
