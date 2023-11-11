@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { ICollaborator } from './shared/interfaces/ICollaborator';
 import Banner from './components/Banner';
 import Form from './components/Form';
 import Time from './components/Time';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -43,26 +45,25 @@ function App() {
     }
   ]
 
-  const [collaborators, setCollaborators] = useState([])
+  const [collaborators, setCollaborators] = useState<ICollaborator[]>([])
 
-  const toNewContributorAdded = (collaborator) => {
-    debugger
+  const toNewContributorAdded = (collaborator: ICollaborator) => {
     setCollaborators([...collaborators, collaborator])
   }
 
   return (
     <div className="App">
-      <Banner imageAdress='/images/banner.png'/>
-      <Form times={times.map(time => time.name)} toCollaboratorRegistered={collaborator => toNewContributorAdded(collaborator)}/>
+      <Banner imageAdress='/images/banner.png' />
+      <Form times={times.map(time => time.name)} toCollaboratorRegistered={collaborator => toNewContributorAdded(collaborator)} />
 
-      {times.map(time => <Time 
-        key={time.name} 
-        name={time.name} 
-        primaryColor={time.primaryColor} 
-        secondColor={time.secondColor} 
+      {times.map(time => <Time
+        key={time.name}
+        name={time.name}
+        primaryColor={time.primaryColor}
+        secondColor={time.secondColor}
         collaborators={collaborators.filter(collaborator => collaborator.time === time.name)}
-      />)}   
-
+      />)}
+      <Footer />
     </div>
   );
 }

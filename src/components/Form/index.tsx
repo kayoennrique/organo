@@ -16,14 +16,16 @@ const Form = (props: FormProps) => {
     const [office, setOffice] = useState('')
     const [image, setImage] = useState('')
     const [time, setTime] = useState('')
-
+    const [calendar, setCalendar] = useState('')
+    
     const saving = (event: React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault()
         props.toCollaboratorRegistered({
             name,
             office,
             image,
-            time
+            time,
+            calendar
         })
         setName('')
         setOffice('')
@@ -54,6 +56,13 @@ const Form = (props: FormProps) => {
                     placeholder="Digite o endereço da imagem"
                     worth={image}
                     changed={worth => setImage(worth)}
+                />
+                <TextField
+                    label='Data de entrada no time'
+                    placeholder=''
+                    worth={calendar}
+                    changed={worth => setCalendar(worth)}
+                    typer='date'
                 />
                 <Dropdown
                     mandatory={true}

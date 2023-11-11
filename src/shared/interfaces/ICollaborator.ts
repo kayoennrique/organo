@@ -3,4 +3,5 @@ export interface ICollaborator {
     office: string
     image: string
     time?: string
+    calendar: string
 }

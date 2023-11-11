@@ -3,6 +3,11 @@ import './Footer.css'
 const Footer = () => {
     return (<footer className="footer">
         <section>
+            <p>
+                Developer by Kayo Ennrique
+            </p>
+        </section>
+        <section>
             <ul>
                 <li>
                     <a href="facebook.com" target="_blank">
@@ -20,14 +25,9 @@ const Footer = () => {
                     </a>
                 </li>
             </ul>
-        </section>
-        <section>
-            <img src="images/logo.png" alt="" />
-        </section>
-        <section>
-            <p>
-                Desenvolvido por Kayo Ennrique.
-            </p>
+            <section>
+                <img src="images/logo.png" alt="" />
+            </section>
         </section>
     </footer>)
 }

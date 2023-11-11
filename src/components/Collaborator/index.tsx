@@ -5,9 +5,10 @@ interface CollaboratorProps {
     image: string
     office: string
     bgColor: string
+    calendar: string
 } 
 
-const Collaborator = ({name, image, office, bgColor}: CollaboratorProps) => {
+const Collaborator = ({name, image, office, bgColor, calendar}: CollaboratorProps) => {
     return (<div className='collaborator'>
         <div className='cabecalho' style={{backgroundColor: bgColor}}>
             <img src={image} alt={name}/>
@@ -15,6 +16,7 @@ const Collaborator = ({name, image, office, bgColor}: CollaboratorProps) => {
         <div className='rodape'>
             <h4>{name}</h4>
             <h5>{office}</h5>
+            <h5>{new Date(calendar).toLocaleDateString()}</h5>
         </div>
     </div>)
 }

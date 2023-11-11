@@ -11,3 +11,15 @@
     padding: 36px 64px;
     box-shadow: 8px 8px 16px rgba(0,0,0, 0.08);
 }
+
+@media only screen and (max-width: 767px) {
+    .form {
+        margin: 60px 0; 
+        box-shadow: 8px 8px 16px rgba(0,0,0, 0.08);
+    }
+
+    .form form {
+        max-width: 80%; 
+        padding: 24px;
+    }
+}

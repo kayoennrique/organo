@@ -23,10 +23,11 @@ const Time = (props: TimeProps) => {
                 name={collaborator.name} 
                 office={collaborator.office}
                 image={collaborator.image}
+                calendar={collaborator.calendar}
                 />)}
             </div>
         </section>
-        :''
+        : <></>
     )
     
 }

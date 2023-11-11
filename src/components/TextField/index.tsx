@@ -8,9 +8,10 @@ interface TextFieldProps {
     label: string
     worth: string
     mandatory?: boolean
+    typer?: 'text' | 'date' | 'email' | 'number'
 }
 
-const TextField = ({ changed, label, placeholder, worth, mandatory = false } : TextFieldProps) => {
+const TextField = ({ changed, label, placeholder, worth, mandatory = false, typer = 'text' } : TextFieldProps) => {
 
     const placeholderModified = `${placeholder}...` 
 
@@ -28,6 +29,7 @@ const TextField = ({ changed, label, placeholder, worth, mandatory = false } : T
                 onChange={typed} 
                 required={mandatory} 
                 placeholder={placeholderModified}
+                type={typer}
             />
         </div>
     )

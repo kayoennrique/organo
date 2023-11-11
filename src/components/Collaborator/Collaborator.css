@@ -35,3 +35,28 @@
     color: #212121;
     padding: 0 16px;
 }
+
+@media only screen and (max-width: 767px) {
+    .collaborator {
+        width: 100%; 
+        
+    }
+
+    .collaborator img {
+        width: 80px;
+        bottom: -40px; 
+    }
+
+    .collaborator .rodape {
+        padding-top: 60px; 
+        padding-bottom: 20px; 
+    }
+
+    .collaborator .rodape h4 {
+        font-size: 16px; 
+    }   
+
+    .collaborator .rodape h5 {
+        font-size: 16px; 
+    }
+}
