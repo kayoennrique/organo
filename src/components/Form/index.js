@@ -13,7 +13,7 @@ const Form = (props) => {
 
     const saving = (event) => {
         event.preventDefault()
-        props.toRegisteredCollaborator({
+        props.toCollaboratorRegistered({
             name,
             office,
             image,

@@ -1,4 +1,6 @@
-import './TextField.css';
+import React from 'react'
+
+import './TextField.css'
 
 interface TextFieldProps {
     changed: (worth: string) => void
@@ -8,9 +10,9 @@ interface TextFieldProps {
     mandatory: boolean
 }
 
-const TextField = ({ changed, label, placeholder, mandatory, worth }: TextFieldProps) => {
+const TextField = ({ changed, label, mandatory, placeholder, worth } : TextFieldProps) => {
 
-    const placeholderModified = `${placeholder}...`
+    const placeholderModified = `${placeholder}...` 
 
     const typed = (event: React.ChangeEvent<HTMLInputElement>) => {
         changed(event.target.value)
@@ -21,10 +23,10 @@ const TextField = ({ changed, label, placeholder, mandatory, worth }: TextFieldP
             <label>
                 {label}
             </label>
-            <input
-                value={worth}
-                onChange={typed}
-                required={mandatory}
+            <input 
+                value={worth} 
+                onChange={typed} 
+                required={mandatory} 
                 placeholder={placeholderModified}
             />
         </div>

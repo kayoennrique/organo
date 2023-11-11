@@ -1,8 +1,7 @@
 import { useState } from 'react';
+import Banner from './components/Banner';
 import Form from './components/Form';
 import Time from './components/Time';
-
-import Banner from './components/Banner';
 
 function App() {
 
@@ -15,40 +14,40 @@ function App() {
     {
       name: 'Front-End',
       primaryColor: '#82CFFA',
-      secondColor: '#E8F8FF',
+      secondColor: '#E8F8FF'
     },
     {
-      name: 'Data Sciense',
+      name: 'Data Science',
       primaryColor: '#A6D157',
-      secondColor: '#F0F8E2',
+      secondColor: '#F0F8E2'
     },
     {
       name: 'Devops',
       primaryColor: '#E06B69',
-      secondColor: '#FDE7E8',
+      secondColor: '#FDE7E8'
     },
     {
       name: 'UX e Design',
-      primaryColor: '#D86EBF',
-      secondColor: '#FAE5F5',
+      primaryColor: '#DB6EBF',
+      secondColor: '#FAE9F5'
     },
     {
       name: 'Mobile',
-      primaryColor: '#FEBA05',
-      secondColor: '#FFF5D9',
+      primaryColor: '#FFBA05',
+      secondColor: '#FFF5D9'
     },
     {
       name: 'Inovação e Gestão',
       primaryColor: '#FF8A29',
-      secondColor: '#FFEEDF',
+      secondColor: '#FFEEDF'
     }
   ]
-  
-  const [collaborators, setcollaborators] = useState([])
+
+  const [collaborators, setCollaborators] = useState([])
 
   const toNewContributorAdded = (collaborator) => {
     debugger
-    setcollaborators([...collaborators, collaborator])
+    setCollaborators([...collaborators, collaborator])
   }
 
   return (
