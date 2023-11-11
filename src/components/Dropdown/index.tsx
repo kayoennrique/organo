@@ -3,7 +3,7 @@ import './Dropdown.css';
 interface DropDownProps {
     changed: (worth: string) => void
     label: string
-    required: boolean
+    mandatory: boolean
     worth: string
     itens: string[]
 }
@@ -14,7 +14,7 @@ const Dropdown = ( props: DropDownProps ) => {
             <label>{props.label}</label>
             <select onChange={event =>
                 props.changed(event.target.value)}
-                required={props.required}
+                required={props.mandatory}
                 value={props.worth}
             >
                 <option value=""></option>

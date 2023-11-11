@@ -1,17 +1,23 @@
 import { useState } from 'react';
+import { ICollaborator } from '../../shared/interfaces/ICollaborator';
 import Button from '../Button';
 import TextField from '../TextField';
 import Dropdown from '../Dropdown';
 import './Form.css';
 
-const Form = (props) => {
+interface FormProps {
+    toCollaboratorRegistered: (collaborator: ICollaborator) => void
+    times: string[]
+}
+
+const Form = (props: FormProps) => {
 
     const [name, setName] = useState('')
     const [office, setOffice] = useState('')
     const [image, setImage] = useState('')
     const [time, setTime] = useState('')
 
-    const saving = (event) => {
+    const saving = (event: React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault()
         props.toCollaboratorRegistered({
             name,
@@ -29,29 +35,29 @@ const Form = (props) => {
         <section className="form">
             <form onSubmit={saving}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
-                <TextField 
+                <TextField
                     mandatory={true}
                     label="Nome"
-                    placeholder="Digite seu nome" 
+                    placeholder="Digite seu nome"
                     worth={name}
                     changed={worth => setName(worth)}
                 />
                 <TextField
                     mandatory={true}
                     label="Cargo"
-                    placeholder="Digite seu cargo" 
+                    placeholder="Digite seu cargo"
                     worth={office}
                     changed={worth => setOffice(worth)}
                 />
                 <TextField
                     label="Imagem"
-                    placeholder="Digite o endereço da imagem" 
+                    placeholder="Digite o endereço da imagem"
                     worth={image}
                     changed={worth => setImage(worth)}
                 />
                 <Dropdown
                     mandatory={true}
-                    label="Time" 
+                    label="Time"
                     itens={props.times}
                     worth={time}
                     changed={worth => setTime(worth)}

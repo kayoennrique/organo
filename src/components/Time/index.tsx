@@ -1,7 +1,15 @@
-import Collaborator from '../Collaborator'
-import './Time.css'
+import { ICollaborator } from '../../shared/interfaces/ICollaborator';
+import Collaborator from '../Collaborator';
+import './Time.css';
 
-const Time = (props) => {
+interface TimeProps {
+    primaryColor: string
+    secondColor: string
+    name: string
+    collaborators: ICollaborator[]
+}
+
+const Time = (props: TimeProps) => {
 
     const css = { backgroundColor: props.secondColor }
 

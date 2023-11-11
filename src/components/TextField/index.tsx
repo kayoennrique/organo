@@ -7,10 +7,10 @@ interface TextFieldProps {
     placeholder: string
     label: string
     worth: string
-    mandatory: boolean
+    mandatory?: boolean
 }
 
-const TextField = ({ changed, label, mandatory, placeholder, worth } : TextFieldProps) => {
+const TextField = ({ changed, label, placeholder, worth, mandatory = false } : TextFieldProps) => {
 
     const placeholderModified = `${placeholder}...` 
 

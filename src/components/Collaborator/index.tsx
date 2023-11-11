@@ -1,6 +1,13 @@
-import './Collaborator.css'
+import './Collaborator.css';
 
-const Collaborator = ({name, image, office, bgColor}) => {
+interface CollaboratorProps {
+    name: string
+    image: string
+    office: string
+    bgColor: string
+} 
+
+const Collaborator = ({name, image, office, bgColor}: CollaboratorProps) => {
     return (<div className='collaborator'>
         <div className='cabecalho' style={{backgroundColor: bgColor}}>
             <img src={image} alt={name}/>
